@@ -5,6 +5,18 @@ struct Node
 int data;
 struct Node *link;
 }*first=NULL,*last=NULL;
+//count 
+void count(struct Node *p)
+{
+    int count=0;
+        while (p!=NULL)
+        {
+            count++;
+            p=p->link;
+        }
+        printf("Total count of Nodes is %d",count);
+        
+    }
 //creation of linked list
 void create()
 {
@@ -143,7 +155,7 @@ printf("Welcome to The Linked List Operation\n");
 while(i!=0)
 {
 printf("Please provide your choice of option\n");
-printf("1-Creation 2-Insertion 3-Insertion At End 4-Deletion 5-Display 6-Exit\n");
+printf("1-Creation 2-Insertion 3-Insertion At End 4-Deletion 5-Display 6-Count 7-Exit\n");
 scanf("%d",&choice);
 switch(choice)
 {
@@ -167,6 +179,9 @@ switch(choice)
     display(first);
     break;
     case 6:
+    count(first);
+    break;
+    case 7:
     exit(1);
     default:
     printf("Please enter proper choice ");
